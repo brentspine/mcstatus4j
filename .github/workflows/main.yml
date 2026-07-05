@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validation:
+    uses: ./.github/workflows/validation.yml
+
+  tests:
+    uses: ./.github/workflows/unit-tests.yml
