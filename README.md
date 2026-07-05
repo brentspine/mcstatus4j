@@ -26,7 +26,7 @@ System.out.println("Version: " + status.version().name());
 System.out.println("Latency: " + status.latency() + "ms");
 
 // Or use SRV record resolution (mimics Minecraft client behavior)
-JavaServer server2 = JavaServer.lookup("example.org");
+JavaServer server2 = JavaServer.lookup("hypixel.net");
 ```
 
 ### Async Operations
