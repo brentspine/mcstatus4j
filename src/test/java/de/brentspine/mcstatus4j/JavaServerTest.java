@@ -74,6 +74,8 @@ class JavaServerTest {
                   }
                   out.write(HEX.parseHex("09010000000001C54246"));
                   out.flush();
+                  // Wait for client to close connection to avoid RST race on Linux
+                  in.read();
                 } catch (IOException e) {
                   throw new UncheckedIOException(e);
                 }
@@ -109,6 +111,8 @@ class JavaServerTest {
                               + "06C6179657273223A7B226D6178223A32302C226F6E6C696E65223A307D2C2276657273696F6E223A7B22"
                               + "6E616D65223A22312E38222C2270726F746F636F6C223A34377D7D"));
                   out.flush();
+                  // Wait for client to close connection to avoid RST race on Linux
+                  in.read();
                 } catch (IOException e) {
                   throw new UncheckedIOException(e);
                 }
@@ -138,6 +142,8 @@ class JavaServerTest {
                   in.read(buffer);
                   out.write(HEX.parseHex("09010000000001C54246"));
                   out.flush();
+                  // Wait for client to close connection to avoid RST race on Linux
+                  in.read();
                 } catch (IOException e) {
                   throw new UncheckedIOException(e);
                 }
